@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+    accountservice:
+        image: someprefix/accountservice
+        ports:
+            - "6767:6767"
+        restart: always
