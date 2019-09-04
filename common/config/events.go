@@ -29,7 +29,7 @@ func HandleRefreshEvent(d amqp.Delivery) {
         }
 }
 
-// {"type":"RefreshRemoteApplicationEvent","timestamp":1494514362123,"originService":"config-server:docker:8888","destinationService":"xxxaccoun:**","id":"53e61c71-cbae-4b6d-84bb-d0dcc0aeb4dc"}
+// {"type":"RefreshRemoteApplicationEvent","timestamp":1494514362123,"originService":"config-server:docker:8889","destinationService":"xxxaccoun:**","id":"53e61c71-cbae-4b6d-84bb-d0dcc0aeb4dc"}
 type UpdateToken struct {
         Type string `json:"type"`
         Timestamp int `json:"timestamp"`

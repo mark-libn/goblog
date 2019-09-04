@@ -26,9 +26,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/callistaenterprise/goblog/common/config"
-	"github.com/callistaenterprise/goblog/common/messaging"
-	"github.com/callistaenterprise/goblog/vipservice/service"
+	"github.com/mark-libn/goblog/common/config"
+	"github.com/mark-libn/goblog/common/messaging"
+	"github.com/mark-libn/goblog/vipservice/service"
 	"github.com/spf13/viper"
 	"github.com/streadway/amqp"
 	"os"
@@ -41,7 +41,7 @@ var appName = "vipservice"
 var messagingClient messaging.IMessagingClient
 
 func init() {
-	configServerUrl := flag.String("configServerUrl", "http://configserver:8888", "Address to config server")
+	configServerUrl := flag.String("configServerUrl", "http://configserver:8889", "Address to config server")
 	profile := flag.String("profile", "test", "Environment profile, something similar to spring profiles")
 	configBranch := flag.String("configBranch", "master", "git branch to fetch configuration from")
 	flag.Parse()

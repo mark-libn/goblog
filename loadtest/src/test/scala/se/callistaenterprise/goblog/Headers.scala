@@ -1,4 +1,4 @@
-package se.callistaenterprise.goblog
+package se.mark-libn.goblog
 
 object Headers {
 	// HTTP Headers

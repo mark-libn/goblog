@@ -9,7 +9,7 @@ import (
 )
 
 
-// Loads config from for example http://configserver:8888/accountservice/test/P8
+// Loads config from for example http://configserver:8889/accountservice/test/P8
 func LoadConfigurationFromBranch(configServerUrl string, appName string, profile string, branch string) {
         url := fmt.Sprintf("%s/%s/%s/%s", configServerUrl, appName, profile, branch)
         fmt.Printf("Loading config from %s\n", url)

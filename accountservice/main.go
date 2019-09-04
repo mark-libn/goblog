@@ -3,10 +3,10 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/callistaenterprise/goblog/accountservice/dbclient"
-	"github.com/callistaenterprise/goblog/accountservice/service"
-	"github.com/callistaenterprise/goblog/common/config"
-	"github.com/callistaenterprise/goblog/common/messaging"
+	"github.com/mark-libn/goblog/accountservice/dbclient"
+	"github.com/mark-libn/goblog/accountservice/service"
+	"github.com/mark-libn/goblog/common/config"
+	"github.com/mark-libn/goblog/common/messaging"
 	"github.com/spf13/viper"
 	"os"
 	"os/signal"
@@ -17,7 +17,7 @@ var appName = "accountservice"
 
 func init() {
 	profile := flag.String("profile", "test", "Environment profile, something similar to spring profiles")
-	configServerUrl := flag.String("configServerUrl", "http://configserver:8888", "Address to config server")
+	configServerUrl := flag.String("configServerUrl", "http://configserver:8889", "Address to config server")
 	configBranch := flag.String("configBranch", "master", "git branch to fetch configuration from")
 
 	flag.Parse()
