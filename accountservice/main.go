@@ -13,7 +13,7 @@ var appName = "accountservice"
 
 func init() {
 	profile := flag.String("profile", "test", "Environment profile, something similar to spring profiles")
-	configServerUrl := flag.String("configServerUrl", "http://configserver:8888", "Address to config server")
+	configServerUrl := flag.String("configServerUrl", "http://configserver:8889", "Address to config server")
 	configBranch := flag.String("configBranch", "master", "git branch to fetch configuration from")
 
 	flag.Parse()
