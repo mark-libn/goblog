@@ -1,6 +1,22 @@
 # goblog
 Code samples for the Go microservice blog series
 
+##后台地址：
+[rabbitmq](http://localhost:15672/#/)
+
+[cockrochdb](http://localhost:3030)
+
+[zipkin](http://localhost:9411/zipkin)
+
+[grafana](http://localhost:3000)
+
+
+####必读框架：
+
+- [go 的路由控制器框架 chi](https://github.com/go-chi/chi)
+- [go debug工具 delve](https://github.com/go-delve/delve)
+- [go 的测试框架 testify](https://github.com/stretchr/testify)
+
 ## Changelog
 - 2019-07-27: Total rewrite of Go code, including introducing Makefiles for build and a docker-compose file for deployment on Docker Swarm.
 

@@ -1,6 +1,6 @@
 FROM davidcaste/alpine-java-unlimited-jce
 
-EXPOSE 8888
+EXPOSE 8889
 
 ADD ./build/libs/*.jar app.jar
 ADD ./server.jks /

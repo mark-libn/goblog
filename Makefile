@@ -14,6 +14,9 @@ build:
 	$(MAKE) -C imageservice/ build
 	$(MAKE) -C vipservice/ build
 
+debug:
+	$(MAKE) -C accountservice/ debug
+
 test:
 	$(MAKE) -C accountservice/ test
 	$(MAKE) -C dataservice/ test
@@ -52,7 +55,7 @@ config-server:
 	./support/config-server/gradlew build -p ./support/config-server
 	docker build -t someprefix/configserver support/config-server/
 	docker service rm configserver || true
-	docker service create -d --replicas 1 --name configserver -p 8888:8888 --network my_network --update-delay 10s --with-registry-auth  --update-parallelism 1 someprefix/configserver
+	docker service create -d --replicas 1 --name configserver -p 8889:8889 --network my_network --update-delay 10s --with-registry-auth  --update-parallelism 1 someprefix/configserver
 
 edge-server:
 	./support/edge-server/gradlew clean build -p support/edge-server
@@ -67,3 +70,19 @@ cockroachdb:
 	docker service create --name=cockroachdb2 --label cockroachdb --network=my_network --mount type=volume,source=cockroach-data2,target=/cockroach/cockroach-data cockroachdb/cockroach:v19.1.2 start --insecure --join=cockroachdb1
 	docker service rm cockroachdb3 || true
 	docker service create --name=cockroachdb3 --label cockroachdb --network=my_network --mount type=volume,source=cockroach-data3,target=/cockroach/cockroach-data cockroachdb/cockroach:v19.1.2 start --insecure --join=cockroachdb1
+
+stop-services:
+	docker service rm accountservice || true
+	docker service rm vipservice || true
+	docker service rm imageservice || true
+	docker service rm dataservice || true
+	docker service rm rabbitmq || true
+	docker service rm configserver || true
+	docker service rm edge-server || true
+	docker service rm cockroachdb1 || true
+	docker service rm cockroachdb2 || true
+	docker service rm cockroachdb3 || true
+
+
+stop-all:
+	docker stop $(docker ps -a -q)

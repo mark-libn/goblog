@@ -16,7 +16,7 @@ spring:
 #      discovery:
 #        serviceId: config-server
 #        enabled: false
-#      uri: http://localhost:8888
+#      uri: http://localhost:8889
 #
 ##eureka.client.serviceUrl.defaultZone: http://localhost:8761/eureka/
 #
@@ -28,7 +28,7 @@ spring:
 #    config:
 #      discovery:
 #        enabled: false
-#      uri: http://config:8888
+#      uri: http://config:8889
 #
 ##eureka.client.serviceUrl.defaultZone: http://discovery:8761/eureka/
 #
